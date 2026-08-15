@@ -6,9 +6,45 @@
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>DeepSeek Harness</title>
+    <style>
+      /* First-frame static loading layer: painted before any JS bundle loads,
+         replaced by the shell root the moment React mounts (createRoot clears
+         the container). Mirrors the AppRoot charging phase so the switch is
+         seamless. */
+      #boot-static {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background-color: #140a2e;
+        background-image:
+          radial-gradient(ellipse at 50% 38%, rgba(168, 85, 247, 0.28) 0%, transparent 58%),
+          radial-gradient(ellipse at 50% 110%, rgba(124, 58, 237, 0.34) 0%, transparent 60%),
+          linear-gradient(180deg, #140a2e 0%, #1d1042 52%, #2a1558 100%);
+        color: #f3e8ff;
+        font-family: ui-monospace, 'SF Mono', Menlo, Consolas, 'Courier New';
+        z-index: 9999;
+      }
+      #boot-static .gem-static {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(160deg, #f5d0fe 0%, #c084fc 38%, #7c3aed 72%, #4c1d95 100%);
+        clip-path: polygon(50% 0%, 78% 30%, 100% 42%, 82% 76%, 50% 100%, 18% 76%, 0% 42%, 22% 30%);
+        filter: drop-shadow(0 0 22px rgba(192, 132, 252, 0.85));
+        animation: gem-float 2.6s ease-in-out infinite;
+      }
+      @keyframes gem-float {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-7px) scale(1.04); }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="boot-static" aria-hidden="true">
+        <div class="gem-static"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

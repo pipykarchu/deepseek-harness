@@ -216,7 +216,9 @@ describe('web e2e: settings modal and General preferences', () => {
       })
       expect(state).toEqual({
         attr: true,
-        background: 'rgb(21, 21, 23)',
+        // The magic-door loading page owns a fixed violet night (AppRoot.module.css),
+        // independent of the persisted theme tokens.
+        background: 'rgb(20, 10, 46)',
         colorScheme: 'dark',
       })
     } finally {

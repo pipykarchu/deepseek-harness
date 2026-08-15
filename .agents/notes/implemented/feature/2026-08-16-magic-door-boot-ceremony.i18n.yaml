@@ -1,0 +1,6 @@
+# Bilingual-pair consistency record (docs/i18n/README.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write .agents/notes/implemented/feature/2026-08-16-magic-door-boot-ceremony.md
+2026-08-16-magic-door-boot-ceremony.md: 9c50b3bbd1fe8b6e1afd4f00a086956e436161c5
+2026-08-16-magic-door-boot-ceremony.zh.md: 7bdc8036026f8670ba1e3be53adc2d72e780fe4e
