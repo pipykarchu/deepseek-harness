@@ -55,3 +55,13 @@ For agents, follow [AGENTS.md](AGENTS.md).
 [MIT](LICENSE)
 
 Third-party dependencies and their licenses are disclosed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+---
+
+## 鲸鱼娘皮肤启动器 (Whale-girl Skin Launcher)
+
+本仓库附带 **maid-atelier（深海女仆工坊）** 皮肤与一键启动器：
+
+- 双击 `启动鲸鱼娘皮肤.bat`：自动把皮肤安装进 `web` profile（幂等）并启动 `dsh web`，页面打开 <http://127.0.0.1:3080>，关闭窗口即停止服务。
+- 皮肤本体在 `maid-atelier/`（来自 [dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale)，CC BY-NC-SA 4.0）。
+- 完整说明（含桌面大头图标快捷方式、卸载、皮肤更新、许可署名）见 [皮肤启动器.md](皮肤启动器.md)。
